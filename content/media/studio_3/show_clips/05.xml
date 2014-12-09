@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 5</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/05-e.mp4?start=0" type="video/mp4" /> 
+      <description>More of the live CD recording, Part II showcases instrumental compositions by Jeff Holmes and includes two more vocals by Porcella, as well as outstanding solos by Johnson..</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

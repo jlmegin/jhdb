@@ -1,0 +1,106 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-success"><i class="glyphicon glyphicon-print"></i></button>
+		<button type="submit" id="back" title="<%%TRANSLATION(Back)%%>" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i></button>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(ID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">FName</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(FName)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">LName</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(LName)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Birth</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(Birth)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Death</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(Death)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">DirectoryPath</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(DirectoryPath)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PrimaryGIID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(PrimaryGIID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">BioDescrGIID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(BioDescrGIID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImageURL</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(ImageURL)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ImageCaption</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(ImageCaption)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PrimaryAccessionID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(PrimaryAccessionID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">TemplateID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(TemplateID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Online</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><input tabindex="1" type="checkbox" name="Online" id="Online" value="1" <%%CHECKED(Online)%%> readonly></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CreationDate</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(CreationDate)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NewDesignationExpirationn</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(NewDesignationExpirationn)%%></p>
+			</div>
+		</div>
+	</fieldset>
+</div>

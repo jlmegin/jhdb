@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 24</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/24-e.mp4?start=0" type="video/mp4" /> 
+      <description>Winner of the Downbeat Jazz Vocal Soloist award, Monica is quickly making a name for herself in the New England area. With a Bachelor's from the Eastman School of Music and a Master's from the New England Conservatory, Monica has impeccable intonation, a crystal voice, and great skill at improvisation. She released her debut CD, If You Never Come To Me, on Brownstone Recordings.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

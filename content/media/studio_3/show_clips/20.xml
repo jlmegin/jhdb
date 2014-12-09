@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 20</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/20-e.mp4?start=0" type="video/mp4" /> 
+      <description>After 25 years in the business, this "overnight sensation" finally has a debut CD, the critically acclaimed Visit Me, and she's headlining at clubs and festivals throughout Europe.  The daughter of Jimmy Woode, bassist for Charlie Parker and Duke Ellington, Shawnn went on the road at age 19 as a singer and percussionist with Mongo Santamaria after he heard her sing in a San Francisco night club.  One of two featured vocalists at Jazz at Sea this past May, she's headed back to festivals in Italy and England in December.  When Shawnn plays in Europe, her father is her bassist.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

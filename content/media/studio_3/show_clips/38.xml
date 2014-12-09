@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 38</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/38-e.mp4?start=0" type="video/mp4" /> 
+      <description>Making her American television debut on Studio 3, Tsidii LeLoka has been acclaimed by the South African press as Africa's greatest singing discovery since Miriam Makeba, with whom she toured in 1991. She was a featured vocalist on international tours with Harry Belafonte from '93 to '95 and recorded with Yusef Lateef '92 and Bob Beldon in '94. Tsidii was the only artist invited to perform at Nelson Mandela's first public appearance in South Africa following his release from prison in 1991. She is currently in the U.S. studying at the University of Massachusetts and Berklee College of Music.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

@@ -1,0 +1,13 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'tblNavMenu_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="tblNavMenu-ID-<%%VALUE(ID)%%>" class="tblNavMenu-ID text-right"><%%SELECT%%><%%VALUE(ID)%%><%%ENDSELECT%%></td>
+		<td id="tblNavMenu-Label-<%%VALUE(ID)%%>" class="tblNavMenu-Label "><%%SELECT%%><%%VALUE(Label)%%><%%ENDSELECT%%></td>
+		<td id="tblNavMenu-HierarchyLevel-<%%VALUE(ID)%%>" class="tblNavMenu-HierarchyLevel text-right"><%%SELECT%%><%%VALUE(HierarchyLevel)%%><%%ENDSELECT%%></td>
+		<td id="tblNavMenu-URL-<%%VALUE(ID)%%>" class="tblNavMenu-URL "><%%SELECT%%><%%VALUE(URL)%%><%%ENDSELECT%%></td>
+		<td id="tblNavMenu-Online-<%%VALUE(ID)%%>" class="tblNavMenu-Online text-right"><%%SELECT%%><%%VALUE(Online)%%><%%ENDSELECT%%></td>
+		<td id="tblNavMenu-Sort-<%%VALUE(ID)%%>" class="tblNavMenu-Sort text-right"><%%SELECT%%><%%VALUE(Sort)%%><%%ENDSELECT%%></td>

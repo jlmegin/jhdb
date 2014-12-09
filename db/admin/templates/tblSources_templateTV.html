@@ -1,0 +1,10 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'tblSources_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="tblSources-ID-<%%VALUE(ID)%%>" class="tblSources-ID text-right"><%%SELECT%%><%%VALUE(ID)%%><%%ENDSELECT%%></td>
+		<td id="tblSources-Name-<%%VALUE(ID)%%>" class="tblSources-Name "><%%SELECT%%><%%VALUE(Name)%%><%%ENDSELECT%%></td>
+		<td id="tblSources-Comment-<%%VALUE(ID)%%>" class="tblSources-Comment "><%%SELECT%%><%%VALUE(Comment)%%><%%ENDSELECT%%></td>

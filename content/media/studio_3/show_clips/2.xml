@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 2</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/02-e.mp4?start=0" type="video/mp4" /> 
+      <description>Director of Jazz Studies at Worcester Polytechnic Institute, guitarist Rich Falco and his group play mainstream, contemporary and Latin jazz with an acoustic emphasis. Trombone, bass, and drums round out the quartet. Two of Richard Jarvais' vocals are featured, including a spine tingling version of Billie Holiday's "Don't Explain."</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

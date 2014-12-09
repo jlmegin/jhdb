@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 18</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/18-e.mp4?start=0" type="video/mp4" /> 
+      <description>While a student at Berklee College in the late '70's, trumpeter, composer, and arranger, Phil Person, had a coveted chair in Herb Pomeroy's student recording band.  Since graduating, Phil has toured with several bands, including the Tommy Dorsey band, led by Buddy Morrow, and the Artie Shaw Band, led by Dick Johnson.  His Louis Armstrong-influenced phrasing shines on "Ruby".  The quartet also features one of Boston's premiere jazz guitarists, Jon Wheatley.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

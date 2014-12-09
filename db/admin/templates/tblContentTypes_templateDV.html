@@ -1,0 +1,97 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="tblContentTypes_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="tblAccessions_view.php?filterer_ContentTypeID=<%%URLVALUE(ID)%%>" id="tblAccessions_link"><i class="glyphicon glyphicon-list-alt"></i> tblAccessions</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="tblAccessions_view.php?filterer_ContentTypeID=<%%URLVALUE(ID)%%>" id="xs_tblAccessions_link"><i class="glyphicon glyphicon-list-alt"></i> tblAccessions</a>
+			<input type="hidden" id="tblAccessions_hclink" value="tblAccessions_view.php?filterer_ContentTypeID=<%%URLVALUE(ID)%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="tblContentTypes_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="ID" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="ID"><%%VALUE(ID)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="Name" class="control-label col-lg-3">Name</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="40" type="text" class="form-control" name="Name" id="Name" value="<%%VALUE(Name)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="tblContentTypes_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="tblContentTypes-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		jQuery(function(){
+			jQuery('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			jQuery('form').eq(0).change(function(){
+				if(jQuery(this).data('already_changed')) return;
+				if(jQuery('#deselect').length) jQuery('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				jQuery(this).data('already_changed', true);
+			});
+
+			jQuery('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+		});
+
+		document.observe("dom:loaded", function() {
+			/* when no record is selected ('add new' mode) */
+			if($$('input[name=SelectedID]')[0].value==''){
+				/* hide links to children tables */
+				$$('.detail_view a[id]').findAll(function(cl){ return cl.id.match(/_link$/); }).invoke('hide');
+				/* skip loading parent/children view */
+				return false;
+			}
+			post(
+				'parent-children.php', {
+					ParentTable: 'tblContentTypes',
+					SelectedID: '<%%VALUE(ID)%%>',
+					Operation: 'show-children'
+				},
+				'tblContentTypes-children'
+			);
+		});
+	</script>

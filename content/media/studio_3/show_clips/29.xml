@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 29</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/29-e.mp4?start=0" type="video/mp4" /> 
+      <description>The producer and host of Studio 3, Toni has been singing jazz in the New England area since the late 70's. Known primarily as a big band singer, she's worked with the Boston Big Band, where she met Tony D'Aveni, the Silver Bullet Swing Orchestra, and the Nelson Riddle Orchestra. One of ten singers featured in the American Song Stylists Concert in New York in 1984, she recently finished a CD called I'm Your Pal which features guitarist Larry Coryell.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 15</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/15-e.mp4?start=0" type="video/mp4" /> 
+      <description>A sextet of Berklee College professors, Jazz Episode is led by Milford's Jerry Seeco.  The  trumpeter/arranger has taught as Berklee for over 20 years while leading his own big band and a smaller group as well as playing with nearly every big band in New England, many of which play Jerry's arrangements.  The group performs compositions by James Williams, Kenny Dorham, Charlie Parker, and Al Foster.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

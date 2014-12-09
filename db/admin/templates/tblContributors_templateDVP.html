@@ -1,0 +1,94 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-success"><i class="glyphicon glyphicon-print"></i></button>
+		<button type="submit" id="back" title="<%%TRANSLATION(Back)%%>" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i></button>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(ID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">FName</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(FName)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">LName</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(LName)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Email</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(Email)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PW</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(PW)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Organization</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(Organization)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ScopeID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(ScopeID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ParentID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="ParentID<%%RND1%%>"><%%COMBOTEXT(ParentID)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AdminLevel</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(AdminLevel)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">CreationDate</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(CreationDate)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ExpirationDate</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(ExpirationDate)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">LastAccessDate</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(LastAccessDate)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Online</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><input tabindex="1" type="checkbox" name="Online" id="Online" value="1" <%%CHECKED(Online)%%> readonly></p>
+			</div>
+		</div>
+	</fieldset>
+</div>

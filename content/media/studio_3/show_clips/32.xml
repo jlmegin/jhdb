@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 32</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/32-e.mp4?start=0" type="video/mp4" /> 
+      <description>The chairman of the Guitar Department at Berklee College of Music, Larry Baione has performed with Jackie Wilson and Stevie Wonder as well as jazz greats like Ran Blake and Jimmy Guiffree. Bassist David Hollender, also on the Berklee faculty, adds his lyrical playing to this stunning duo's version of beautiful jazz standards.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

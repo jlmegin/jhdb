@@ -1,0 +1,48 @@
+#mediaContainer {
+	width: 700px;
+	border: 1px solid black;
+}
+
+#instructions {
+	width: inherit;
+	
+	font-size: 200%;
+	
+	vertical-align: middle;
+	
+	margin-top: 25%;
+	padding: 0px;
+}
+
+#playerContainer {
+	width: 700px;
+	height: 525px;
+	
+	text-align: center;
+	vertical-align: middle;
+
+	
+	border: 1px solid black;
+	margin: 0px;
+	margin-bottom: 20px;
+	padding: 0px;
+}
+
+#episodeTitle {
+	width: 700px;
+	
+	text-align: center;
+	font-weight: bold;
+	
+	margin: 1px;
+	padding: 0px;
+}
+
+.episodeBox {
+	width: 688px;
+	background: #FFF;
+	border: 2px solid black;
+	
+	margin: 2px;
+	padding: 2px;
+}

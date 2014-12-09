@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 19</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/19-e.mp4?start=0" type="video/mp4" /> 
+      <description>Tenor saxophonist Arbuckle received rave reviews in the jazz press for his CD, No More, No Les, on the Audio Quest label.  The former Berklee teacher, who's played with the Artie Shaw Band, Rita Moreno and Lou Rawls, graduated from Berklee and, in 1992, received a Masters Degree in Jazz Performance from the New England Conservatory of Music.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

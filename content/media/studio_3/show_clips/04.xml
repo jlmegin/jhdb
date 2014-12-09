@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 4</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/04-e.mp4?start=0" type="video/mp4" /> 
+      <description>Seasoned vocalist Porcella teams up with Holmes and Johnson for a live CD recording in November of '93 at Worcester's most famous jazz venue, the El Morocco restaurant. Professor of jazz studies at UMass/Amherst, pianist/trumpeter Holmes brings his band as well as his compositions and arrangements to the session. Featured is Concord Jazz recording artist and Artie Shaw Band leader, Dick Johnson on reeds. This show was one of five finalists in the nation for a localCableACE'93 award in the music category.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

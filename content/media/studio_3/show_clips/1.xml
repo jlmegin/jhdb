@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 1</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/01-e.mp4?start=0" type="video/mp4" /> 
+      <description>The area's most popular jazz act since 1982 features the incomparable trumpet and flugelhorn playing of elder statesman Emil Haddad, a Worcester native who played in the big bands of New York in the 1940's. Emil also sings in his own inimitable style. Pianist Dick Odgren, who grew up in Auburn, Massachusetts, where he still lives, taught at Berklee College of Music for twelve years and has recorded with Mike Metheny on Impulse. Dick and Emil have an unmatched sound and synergy.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 22</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/22-e.mp4?start=0" type="video/mp4" /> 
+      <description>The group's high voltage, electric jazz showcases the compositions of guitarist John Paul, who fuses bebop and swing with rock, funk, Latin and world music. Encore Magazine described it as "high energy music played with astonishing skill and inventiveness." New Hampshire native Paul, who was voted "Best Guitarist in New Hampshire" in 1989, has earned rave reviews from Guitar Player Magazine and several other music publications.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

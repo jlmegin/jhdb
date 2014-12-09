@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 39</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/39-e.mp4?start=0" type="video/mp4" /> 
+      <description>The Be-Bop Guitars began as an outlet for six Berklee faculty guitarists to play the transcribed solos of Supersax, a band featuring five saxophones. Leader John Baboian soon began writing his own arrangements, and other group members have also contributed. Performing with the group is Ron Mahdi on bass, Jon Hazilla on drums, and special guest Jerry Seeco on trumpet, flugelhorn and flute.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

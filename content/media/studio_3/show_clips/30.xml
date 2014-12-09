@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 30</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/30-e.mp4?start=0" type="video/mp4" /> 
+      <description>On one of this season's best shows, saxophonist and composer Cercie Miller leads an incredible group whose debut CD Dedication on Stash Records is getting national airplay. She founded the avant-garde jazz collective, Your Neighborhood Saxophone Quartet, which performed at the 1989 Boston Globe Jazz Festival. Cercie's group includes some of Boston's best: Tim Ray on piano, David Clark on bass, and Bob Savine on drums.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

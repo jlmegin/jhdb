@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 21</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/21-e.mp4?start=0" type="video/mp4" /> 
+      <description>With her recently released CD, From This Moment On on Brownstone Recordings, Lisa takes her place as one of Boston's finest vocal improvisers. In May, she received her Master's Degree in Jazz Vocal Performance from the New England Conservatory of Music. As a result of an injury in 1979, Lisa uses a wheelchair for mobility. She was the subject of a recent documentary "Key Changes: A Portrait of Lisa Thorson" broadcast on WGBH/Boston.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

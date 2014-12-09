@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 3</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/03-e.mp4?start=0" type="video/mp4" /> 
+      <description>This very entertaining Dixieland group was formed in 1990 by a group of Berklee students. Since then, they've gone to Europe twice to perform their authentic New Orleans-style jazz, released a CD, and are now mainstays of the Boston music scene.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

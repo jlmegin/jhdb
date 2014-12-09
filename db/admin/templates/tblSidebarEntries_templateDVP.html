@@ -1,0 +1,70 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-success"><i class="glyphicon glyphicon-print"></i></button>
+		<button type="submit" id="back" title="<%%TRANSLATION(Back)%%>" class="btn btn-warning"><i class="glyphicon glyphicon-remove"></i></button>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(ID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Title</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(Title)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Caption</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(Caption)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">AccessionID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><span id="AccessionID<%%RND1%%>"><%%COMBOTEXT(AccessionID)%%></span></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">LinkURL</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(LinkURL)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ThumbnailID</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(ThumbnailID)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">NewDateExpiration</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%COMBOTEXT(NewDateExpiration)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Group</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(Group)%%></p>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">SortWithinGroup</label>
+			<div class="col-xs-9">
+				<p class="form-control-static"><%%VALUE(SortWithinGroup)%%></p>
+			</div>
+		</div>
+	</fieldset>
+</div>

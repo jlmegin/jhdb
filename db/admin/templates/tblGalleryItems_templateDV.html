@@ -1,0 +1,160 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="tblGalleryItems_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="tblGalleryItems_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="ID" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="ID"><%%VALUE(ID)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="ParentGalleryID" class="control-label col-lg-3">ParentGalleryID</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(ParentGalleryID)%%></div><div class="col-xs-1"><%%PLINK(ParentGalleryID)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="SubGalleryID" class="control-label col-lg-3">SubGalleryID</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="" type="text" class="form-control" name="SubGalleryID" id="SubGalleryID" value="<%%VALUE(SubGalleryID)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="GIContentTypeID" class="control-label col-lg-3">GalItemContentTypeID</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(GIContentTypeID)%%></div><div class="col-xs-1"><%%PLINK(GIContentTypeID)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="PageTitle" class="control-label col-lg-3">PageTitle</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="PageTitle" id="PageTitle" value="<%%VALUE(PageTitle)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="ThumbURL" class="control-label col-lg-3">ThumbURL</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="100" type="text" class="form-control" name="ThumbURL" id="ThumbURL" value="<%%VALUE(ThumbURL)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="ThumbAltText" class="control-label col-lg-3">ThumbAltText</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="100" type="text" class="form-control" name="ThumbAltText" id="ThumbAltText" value="<%%VALUE(ThumbAltText)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="CSSClearBothAfter" class="control-label col-lg-3">CSSClearBothAfter</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="" type="text" class="form-control" name="CSSClearBothAfter" id="CSSClearBothAfter" value="<%%VALUE(CSSClearBothAfter)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="MenuTitle" class="control-label col-lg-3">MenuTitle</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="100" type="text" class="form-control" name="MenuTitle" id="MenuTitle" value="<%%VALUE(MenuTitle)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="CaptionText" class="control-label col-lg-3">CaptionText</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="CaptionText" id="CaptionText" value="<%%VALUE(CaptionText)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="URL" class="control-label col-lg-3">URL</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="100" type="text" class="form-control" name="URL" id="URL" value="<%%VALUE(URL)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-lg-offset-3 col-lg-9">
+						<div class="checkbox"><label for="Online"><input tabindex="1" type="checkbox" name="Online" id="Online" value="1" <%%CHECKED(Online)%%>> Online</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="HomepageFeaturedSort" class="control-label col-lg-3">HomepageFeaturedSort</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="" type="text" class="form-control" name="HomepageFeaturedSort" id="HomepageFeaturedSort" value="<%%VALUE(HomepageFeaturedSort)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="Sort" class="control-label col-lg-3">Sort</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="" type="text" class="form-control" name="Sort" id="Sort" value="<%%VALUE(Sort)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-lg-offset-3 col-lg-9">
+						<div class="checkbox"><label for="BioDescrPage"><input tabindex="1" type="checkbox" name="BioDescrPage" id="BioDescrPage" value="1" <%%CHECKED(BioDescrPage)%%>> BioDescrPage</label>
+						</div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="tblGalleryItems_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		jQuery(function(){
+			jQuery('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			jQuery('form').eq(0).change(function(){
+				if(jQuery(this).data('already_changed')) return;
+				if(jQuery('#deselect').length) jQuery('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				jQuery(this).data('already_changed', true);
+			});
+
+			jQuery('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+		});
+
+	</script>

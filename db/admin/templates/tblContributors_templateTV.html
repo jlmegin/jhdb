@@ -1,0 +1,20 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'tblContributors_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="tblContributors-ID-<%%VALUE(ID)%%>" class="tblContributors-ID text-right"><%%SELECT%%><%%VALUE(ID)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-FName-<%%VALUE(ID)%%>" class="tblContributors-FName "><%%SELECT%%><%%VALUE(FName)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-LName-<%%VALUE(ID)%%>" class="tblContributors-LName "><%%SELECT%%><%%VALUE(LName)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-Email-<%%VALUE(ID)%%>" class="tblContributors-Email "><a href="mailto:<%%VALUE(Email)%%>" title="<%%VALUE(Email)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="tblContributors-PW-<%%VALUE(ID)%%>" class="tblContributors-PW "><%%SELECT%%><%%VALUE(PW)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-Organization-<%%VALUE(ID)%%>" class="tblContributors-Organization "><%%SELECT%%><%%VALUE(Organization)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-ScopeID-<%%VALUE(ID)%%>" class="tblContributors-ScopeID text-right"><%%SELECT%%><%%VALUE(ScopeID)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-ParentID-<%%VALUE(ID)%%>" class="tblContributors-ParentID "><%%SELECT%%><%%VALUE(ParentID)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-AdminLevel-<%%VALUE(ID)%%>" class="tblContributors-AdminLevel text-right"><%%SELECT%%><%%VALUE(AdminLevel)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-CreationDate-<%%VALUE(ID)%%>" class="tblContributors-CreationDate "><%%SELECT%%><%%VALUE(CreationDate)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-ExpirationDate-<%%VALUE(ID)%%>" class="tblContributors-ExpirationDate "><%%SELECT%%><%%VALUE(ExpirationDate)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-LastAccessDate-<%%VALUE(ID)%%>" class="tblContributors-LastAccessDate "><%%SELECT%%><%%VALUE(LastAccessDate)%%><%%ENDSELECT%%></td>
+		<td id="tblContributors-Online-<%%VALUE(ID)%%>" class="tblContributors-Online text-right"><%%SELECT%%><%%VALUE(Online)%%><%%ENDSELECT%%></td>

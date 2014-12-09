@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 16</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/16-e.mp4?start=0" type="video/mp4" /> 
+      <description>Brazilian singer and New England Conservatory graduate, Luciana Souza comes from the musical family of Walter Santos and Tereza Souza, vanguards of the bossa nova movement who composed many of the songs recorded by Brazil '66.  Her international band (from England, Germany, Canada and New Hampshire!) performs Luciana's compositions, Brazilian music by Pascoal, Jobim, and Santos & Souza, as well as a stunning rendition of Gershwin's "Embraceable You."</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

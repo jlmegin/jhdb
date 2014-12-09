@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 23</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/23-e.mp4?start=0" type="video/mp4" /> 
+      <description>Worcester legend Emil Haddad on flugelhorn, trumpet and vocals and pianist Dick Odgren have been a team since the early 80's. It seemed only fitting that the Studio 3's original "guinea pigs" should be invited back to help kick off the second season. Once again, the amazing communication between these two accomplished musicians is breathtaking.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

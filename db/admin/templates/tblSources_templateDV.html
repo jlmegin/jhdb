@@ -1,0 +1,76 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="tblSources_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="tblSources_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="ID" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="ID"><%%VALUE(ID)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="Name" class="control-label col-lg-3">Name</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="40" type="text" class="form-control" name="Name" id="Name" value="<%%VALUE(Name)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="Comment" class="control-label col-lg-3">Comment</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="Comment" id="Comment" value="<%%VALUE(Comment)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="tblSources_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		jQuery(function(){
+			jQuery('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			jQuery('form').eq(0).change(function(){
+				if(jQuery(this).data('already_changed')) return;
+				if(jQuery('#deselect').length) jQuery('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				jQuery(this).data('already_changed', true);
+			});
+
+			jQuery('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+		});
+
+	</script>

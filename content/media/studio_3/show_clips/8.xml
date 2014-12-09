@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 8</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/08-e.mp4?start=0" type="video/mp4" /> 
+      <description>Since its inception in 1988, the "trio" has expanded to include international performer and recording artist, Billy Novick on alto sax and clarinet; and on trumpet and flugelhorn, jazz legend Herb Pomeroy, a long-time Berklee professor who's performed and/or recorded with Duke Ellington, Charlie Parker, Stan Kenton, John Lewis, and Paul Gonsalves, to name a few. Pianist/composer Mark Kross and his group of stellar players can best be described as acoustic post-bop.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

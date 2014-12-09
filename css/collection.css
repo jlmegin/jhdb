@@ -1,0 +1,432 @@
+/*
+ * I added the following styles to create info boxes at the top of collections which
+ * detail information about the collection and more importantly detail copyright information.
+ */
+.coll-blurb
+{
+	
+}
+
+.coll-blurb-title
+{
+}
+
+
+#banner {
+	background:url(../images/banners/bg.jpg) no-repeat top left;
+	height:149px;
+	margin:0px 0px 0px 0px;
+}
+
+#banner-crumbs {
+	background:none;
+	height:35px;
+	float:left;
+	margin:0;
+	padding:10px 0px 0px 10px;
+	font-size:.9em;
+}
+
+#banner-search {
+	background:none;
+	margin:0px;
+	height:35px;
+	float: right;
+	text-align:right;
+	padding:0px 10px 10px 0px;
+	font-size:.9em;
+}
+
+.collsearchbartext {
+	background:#FFF;
+	border:solid 2px #666;
+	padding:1px;
+	margin:6px 0 0 0;
+
+}
+
+.collsearchbartext:hover {
+	border:solid 2px #56020a;
+}
+
+.collsearchbarbutton {
+	color: #56020a;
+	margin:0px 0px 1px 4px;
+	background:#FFF;
+	border:solid 2px #999;
+}
+
+.collsearchbarbutton:hover {
+	background:#FFF;
+	border:solid 2px #56020a;
+}
+
+
+
+
+
+
+#banner-name {
+	background:none;
+	height:51px;
+}
+
+#banner-nav {
+	background:none;
+	text-align:center;
+}
+
+#banner-nav a:link {
+	color:#CCCCCC;	
+}
+
+#banner-nav a:visited {
+	color:#CCCCCC;	
+}
+
+#banner-nav a:hover {
+	color:#FFF;	
+}
+
+#banner-nav a:active {
+	color:#444;	
+}
+
+
+
+
+
+
+
+
+#coll-content {
+	padding:15px 10px;
+	letter-spacing:.1em;
+}
+
+
+
+.coll-main-item a:link{
+	float:left;
+	margin:10px 11px;
+	padding:10px;
+	width:200px;
+	height:180px;
+	background-color:#F5F4F4;
+	border:2px solid #BCBCBC;
+}
+
+.coll-main-item a:visited{
+	float:left;
+	margin:10px 11px;
+	padding:10px;
+	width:200px;
+	height:180px;
+	background-color:#F5F4F4;
+	border:2px solid #BCBCBC;
+}
+
+.coll-main-item a:hover{
+	float:left;
+	margin:10px 11px;
+	padding:10px;
+	width:200px;
+	height:180px;
+	background-color:#CCC;
+	border:2px solid #56020a;
+	color:#56020a;
+}
+
+.coll-main-item a:active{
+	float:left;
+	margin:10px 11px;
+	padding:10px;
+	width:200px;
+	height:180px;
+	background-color:#56020a;
+	border:2px solid #787878;
+	color:#CCC;
+}
+
+.coll-main-item-note {
+	font-size: .8em;
+	margin: 0px;
+	padding: 0px;
+	letter-spacing: .1em;
+	line-height:1.3em;
+}
+
+	.coll-main-interview a:link{
+	float:left;
+	margin:10px 11px;
+	padding:10px;
+	width:695px;
+	height:125px;
+	background-color:#F5F4F4;
+	border:2px solid #BCBCBC;
+	}
+	
+	.coll-main-interview a:visited{
+	float:left;
+	margin:10px 11px;
+	padding:10px;
+	width:695px;
+	height:125px;
+	background-color:#F5F4F4;
+	border:2px solid #BCBCBC;
+	}
+	
+	.coll-main-interview a:hover{
+	float:left;
+	margin:10px 11px;
+	padding:10px;
+	width:695px;
+	height:125px;
+	background-color:#CCC;
+	border:2px solid #56020a;
+	color:#56020a;
+	}
+	
+	.coll-main-interview a:active{
+	float:left;
+	margin:10px 11px;
+	padding:10px;
+	width:695px;
+	height:125px;
+	background-color:#56020a;
+	border:2px solid #787878;
+	color:#CCC;
+	}
+
+.coll-entry-thumbnail {
+	border:1px solid #666666;
+}
+
+
+
+#coll-content-cent {
+	text-align:center;
+
+}
+
+
+
+
+.audiotrack a:link{
+	float:left;
+	margin:4px;
+	padding:5px;
+	width:80px;
+	background-color:#FFF;
+	border:2px solid #BCBCBC;
+	text-align:center;
+}
+
+.audiotrack a:visited{
+	float:left;
+	margin:4px;
+	padding:5px;
+	width:80px;
+	background-color:#FFF;
+	border:2px solid #BCBCBC;
+	text-align:center;
+}
+
+.audiotrack a:hover{
+	float:left;
+	margin:4px;
+	padding:5px;
+	width:80px;
+	background-color:#FFF;
+	border:2px solid #56020a;
+	text-align:center;
+}
+
+.audiotrack a:active{
+	float:left;
+	margin:4px;
+	padding:5px;
+	width:80px;
+	background-color:#56020a;
+	border:2px solid #FFF;
+	text-align:center;
+}
+
+
+
+
+.audiotrackblock a:link{
+	display:block;
+	margin:4px;
+	padding:5px;
+	background-color:#FFF;
+	border:2px solid #BCBCBC;
+	text-align:center;
+}
+
+.audiotrackblock a:visited{
+	display:block;
+	margin:4px;
+	padding:5px;
+	background-color:#FFF;
+	border:2px solid #BCBCBC;
+	text-align:center;
+}
+
+.audiotrackblock a:hover{
+	display:block;
+	margin:4px;
+	padding:5px;
+	background-color:#FFF;
+	border:2px solid #56020a;
+	text-align:center;
+}
+
+.audiotrackblock a:active{
+	display:block;
+	margin:4px;
+	padding:5px;
+	background-color:#56020a;
+	border:2px solid #FFF;
+	text-align:center;
+}
+
+
+
+
+.photogallery  {
+	margin:0px;
+	padding:10px;
+	background:#FFF;
+	border:2px solid #888;
+}
+
+.photogallery:hover {
+	margin:0px;
+	padding:10px;
+	background:#FFF;
+	border:2px solid #56020a;
+}
+
+.biophoto  {
+	margin:15px 0 15px 15px;
+	padding:10px;
+	background:#FFF;
+	border:2px solid #bbb;
+}
+
+.biophoto:hover {
+	margin:15px 0 15px 15px;
+	padding:10px;
+	background:#FFF;
+	border:2px solid #56020a;
+}
+
+
+
+
+.buttonfullwide a:link{
+	display:block;
+	margin:4px;
+	padding:25px;
+	background-color:#FFF;
+	border:2px solid #BCBCBC;
+	text-align:center;
+	font-weight:bold;
+	font-size:1.2em;
+}
+
+.buttonfullwide a:visited{
+	display:block;
+	margin:4px;
+	padding:25px;
+	background-color:#FFF;
+	border:2px solid #BCBCBC;
+	text-align:center;
+	font-weight:bold;
+	font-size:1.2em;
+}
+
+.buttonfullwide a:hover{
+	display:block;
+	margin:4px;
+	padding:25px;
+	background-color:#FFF;
+	border:2px solid #56020a;
+	text-align:center;
+	font-weight:bold;
+	font-size:1.2em;
+}
+
+.buttonfullwide a:active{
+	display:block;
+	margin:4px;
+	padding:25px;
+	background-color:#56020a;
+	border:2px solid #FFF;
+	text-align:center;
+	font-weight:bold;
+	font-size:1.2em;
+}
+
+#agreement {
+	padding:20px;
+	color:#FFF;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	margin: 10px auto;
+	width:780px;
+}
+
+#agreementchoice {
+	padding:20px;
+	font-size:36px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	margin: 10px auto;
+
+}
+
+.redbold {
+	font-size:24px;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/* used in poetry collections: */
+
+#subnav {
+	text-align: center;
+	padding: 5px 0px;
+	margin: 5px auto;
+	border-width: 2px 0px;
+	border: #116 solid;
+	width: 710px;
+	background: #eee;
+}
+
+.poembox {
+	border: 8px #116 solid;
+	margin: 0px auto;
+	padding: 30px;
+	font-family: "Georgia", "Verdana", sans-serif;
+	color: black;
+}
+
+#poemtitle {
+	text-align: center;
+	font-size: 125%;
+	font-weight: bold;
+	font-family: "Georgia", "Verdana", sans-serif;
+}
+
+#poemauthor {
+	text-align: center;
+	font-size: 100%;
+	color: #666;
+}
+
+#poemlist {
+	list-style-type: none;
+	
+}

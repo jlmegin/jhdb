@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 25</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/25-e.mp4?start=0" type="video/mp4" /> 
+      <description>Vocalist/arranger Linda Dagnello and her husband, drummer Bob Dagnello, lead a group that puts a fresh spin on old standards from the American Songbook. Another New Hampshire native, Linda almost conjures up Billie Holliday on "You've Changed". Their recent CD release is entitled Fever.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

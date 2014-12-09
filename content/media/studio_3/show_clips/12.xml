@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 12</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/12-e.mp4?start=0" type="video/mp4" /> 
+      <description>More of this exciting concert taped on location at WPI.  The program includes compositions by vibraphonist Cecilia Smith, Berklee and New England Conservatory teacher and Boston Globe Jazz Festival performer. Also featured are works by Pat Metheny, Wayne Shorter, and Miles Davis.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

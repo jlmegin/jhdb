@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 26</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/26-e.mp4?start=0" type="video/mp4" /> 
+      <description>Jim Heffernan on piano and Jerry Sabatini on trumpet and flugelhorn are complemented by bassist Bob Simonelli, making his fourth appearance on Studio 3, and Eric Nebbia, who was a member of the Marian McPartland Trio for three years. Their music, infused with African, Afro-Cuban and salsa rhythms, makes for a very high energy, entertaining show.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

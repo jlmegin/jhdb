@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 11</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/11-e.mp4?start=0" type="video/mp4" /> 
+      <description>Boston native Broadnax, who was pianist/arranger for the Sabby Lewis Orchestra, also arranged for the bands of Lionel Hampton, Woody Herman and Count Basie, and has performed with Clark Terry, James Moody, Joe Williams. and Dorothy Donegan.  His debut CD on Brownstone, appropriately titled It's About Time, showcases his great jazz piano stylings as well as a voice reminiscent of Johnny Hartman.  Featured in the quartet is Mike Turk on harmonica.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

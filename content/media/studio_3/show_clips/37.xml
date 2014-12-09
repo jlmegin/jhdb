@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 37</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/37-e.mp4?start=0" type="video/mp4" /> 
+      <description>Vocalist Kris Adams and guitarist Rob Levit are busy New England musicians. recording artists, and educators -- Kris at Berklee, and both at the New England Conservatory. Their duo work includes their own compositions and standards as well as lesser known songs by composers like Ornette Coleman. The improvisational interplay between these two seasoned musicians is an education in itself.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 9</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/09-e.mp4?start=0" type="video/mp4" /> 
+      <description>Vocalist Fortune, backed by guitar, bass and saxophone, interprets  compositions from sources as diverse as George Gershwin and Donny Hathaway.  She's been a favorite for years in Central New England, and her easy style sets the pace for the group's mellow fare.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

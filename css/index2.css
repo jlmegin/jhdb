@@ -1,0 +1,503 @@
+
+.text-small-indent {
+	font-size: .8em;
+	margin: 0px 0px 0px 20px;
+	padding: 0px;
+	letter-spacing: .1em;
+	font-weight:normal;
+}
+
+
+
+
+
+
+
+#index {
+
+
+}
+
+
+#splash {
+	background-color:#CCCCCC;
+
+
+}
+
+
+#site-info {
+	padding:10px 15px 0px 15px;
+	font-size:.85em;
+}
+
+
+
+
+
+
+
+
+
+
+
+#list-collections-wrapper {
+	margin:5px 0px 0px 10px;
+	padding:0px;
+	width:360px;
+	float:left;
+}
+
+#list-collections {
+
+}
+
+
+#list-collections a {
+	padding:0px;
+
+}
+
+#list-collections img {
+	float:right;
+
+}
+
+
+div#arsenault {
+	margin:0;
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+}
+
+div#bastarache {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+}
+
+div#blunt {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+}
+
+div#clemente {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#fagerquist {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#gordon {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#haddad {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#holovnia {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#hand {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#jazzsphere {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#jefferson {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#moffitt {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#odgren {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#pricebarney {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#pricebunny {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#sawyer {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+	
+div#scrapbook {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#shamgochian {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#stevens {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#studio3 {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#talkin {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#tandg {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#tristano {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#visual {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#weblinks {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#wicn {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#williamson {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#womag {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+div#zupan {
+	width: 320px;
+	height: 15px;
+	padding:0px 5px 10px 5px;
+	overflow:hidden;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#list-collections ul {
+	list-style:none;
+	margin:0px 0px 0px 13px;
+	padding:0px;
+	font-size:1em;
+	letter-spacing:.1em;
+}
+
+#list-collections li {
+	margin:0px;
+	padding:0px;
+}
+
+
+
+
+
+
+
+#index-search {
+	margin:5px 22px 5px auto;
+	padding:0px;
+	width:360px;
+	float:right;
+	text-align:right;
+}
+
+
+.indexsearchbartext {
+	background:#FFF;
+	border:solid 2px #666;
+	padding:3px;
+	margin:6px 0 0 11px;
+
+}
+
+.indexsearchbartext:hover {
+	border:solid 2px #56020a;
+}
+
+.indexsearchbarbutton {
+	color: #56020a;
+	margin:0px 0px 1px 4px;
+	background:#FFF;
+	border:solid 2px #999;
+}
+
+.indexsearchbarbutton:hover {
+	background:#FFF;
+	border:solid 2px #56020a;
+}
+
+
+
+
+
+
+
+
+
+
+
+#featured {
+	width: 360px;
+	float:right;
+	margin: 5px 0px 0px 0px;
+	padding:0px;
+	letter-spacing:.1em;
+}
+
+
+
+.featured-item a:link{
+	float:left;
+	margin:7px 11px;
+	padding:10px;
+	width:300px;
+	background-color:#FFF;
+	border:2px solid #BCBCBC;
+}
+
+.featured-item a:visited{
+	float:left;
+	margin:7px 11px;
+	padding:10px;
+	width:300px;
+	background-color:#FFF;
+	border:2px solid #BCBCBC;
+}
+
+.featured-item a:hover{
+	float:left;
+	margin:7px 11px;
+	padding:10px;
+	width:300px;
+	background-color:#CCC;
+	border:2px solid #56020a;
+	color:#56020a;
+}
+
+.featured-item a:active{
+	float:left;
+	margin:7px 11px;
+	padding:10px;
+	width:300px;
+	background-color:#56020a;
+	border:2px solid #787878;
+	color:#CCC;
+}
+
+.featured-item-note {
+	font-size: .8em;
+	margin: 0px;
+	padding: 0px;
+	letter-spacing: .1em;
+	line-height:1.5em;
+}
+
+
+
+
+
+
+
+
+
+/*
+
+#list-materials {
+	margin:5px 0px 0px 10px;
+	padding:0px;
+	width:360px;
+	float:right;
+}
+
+.materialtype {
+	display:block;
+	font-size:1.1em;
+	font-weight:bold;
+	margin:5px 0 0 0;
+	color:#333;
+}
+
+.material-listing {
+	font-size:.9em;
+	padding:0 5px 0 0;
+	margin:0 5px 0 0
+}
+
+.f5f4f4 {
+	color:#f5f4f4;
+}
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+	  body,div,dl,dt,dd,ol,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+margin: 0;
+padding: 0;
+}
+	  
+		html { font-size: 13px; font-family: "Lucida Grande", Verdana, Arial, sans-serif; }
+		#heading {
+			display: block;
+			text-align: center;
+			margin-bottom: 1em;
+		}
+		#heading * {
+			display: inline;
+			padding: 4px;
+			user-select: none;
+			cursor: pointer;
+			vertical-align: middle;
+		}
+		#heading li.active {
+			background-color: #66ccff;
+			border-radius: 3px;
+			-webkit-border-radius: 3px;
+			-opera-border-radius: 3px;
+			-moz-border-radius: 3px;
+		}
+		
+		#wrapper { border: 1px dotted gray; margin: 1em; padding: 1em; }
+		
+		#panes {
+			text-align: justify;
+			border-style: none;
+			/*width: 245px;*/
+			margin: 0 1em 0 1em;
+		}
+		
+		#panes p {
+		  width: 600px;
+		  margin: 0 auto 1em auto;
+		  line-height: 1.2em;
+		}
+		
+		#panes div div { overflow: hidden; }
+		
+		#previous { float: none; cursor: pointer; }
+		#next { float: none; cursor: pointer; }

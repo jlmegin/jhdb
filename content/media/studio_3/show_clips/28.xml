@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 28</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/28-e.mp4?start=0" type="video/mp4" /> 
+      <description>One of last season's most exciting groups comes back for a return engagement as they release their first CD on RAM Records, The Sled Dogs - The Music of Jim Kelly. Three Berklee teachers plus one rock and roll bass player combine the spontaneous improvization of jazz, the passion of blues, and the intensity of rock, with touches of reggae, country and even Irish music. The compositions by guitarist and Rhode Island native Jim Kelly and the saxophone stylings of Jim Odgren, formerly with the Gary Burton Quartet, give this band its extraordinary sound.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

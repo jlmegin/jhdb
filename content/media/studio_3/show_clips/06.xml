@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 6</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/06-e.mp4?start=0" type="video/mp4" /> 
+      <description>Guitarist/composer and Berklee teacher Jane Miller, backed by Bob Simonelli on bass and Don Kirby on drums, performs standards as well as her own very creative compositions. Her first CD, Postcard, has received a lot of airplay on jazz radio stations in Boston and beyond, and she released her second on the Purple Rose label.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

@@ -1,0 +1,12 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'tblUploadLogs_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="tblUploadLogs-ID-<%%VALUE(ID)%%>" class="tblUploadLogs-ID text-right"><%%SELECT%%><%%VALUE(ID)%%><%%ENDSELECT%%></td>
+		<td id="tblUploadLogs-ContributorID-<%%VALUE(ID)%%>" class="tblUploadLogs-ContributorID text-right"><%%SELECT%%><%%VALUE(ContributorID)%%><%%ENDSELECT%%></td>
+		<td id="tblUploadLogs-Log-<%%VALUE(ID)%%>" class="tblUploadLogs-Log "><%%SELECT%%><%%VALUE(Log)%%><%%ENDSELECT%%></td>
+		<td id="tblUploadLogs-UploadDate-<%%VALUE(ID)%%>" class="tblUploadLogs-UploadDate "><%%SELECT%%><%%VALUE(UploadDate)%%><%%ENDSELECT%%></td>
+		<td id="tblUploadLogs-IP-<%%VALUE(ID)%%>" class="tblUploadLogs-IP "><%%SELECT%%><%%VALUE(IP)%%><%%ENDSELECT%%></td>

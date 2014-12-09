@@ -1,0 +1,195 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="tblGalleries_dv_container">
+	<!-- child links -->
+	<div class="row">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="tblGalleryItems_view.php?filterer_ParentGalleryID=<%%URLVALUE(ID)%%>" id="tblGalleryItems_link"><i class="glyphicon glyphicon-list-alt"></i> tblGalleryItems</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="tblGalleryItems_view.php?filterer_ParentGalleryID=<%%URLVALUE(ID)%%>" id="xs_tblGalleryItems_link"><i class="glyphicon glyphicon-list-alt"></i> tblGalleryItems</a>
+			<input type="hidden" id="tblGalleryItems_hclink" value="tblGalleryItems_view.php?filterer_ParentGalleryID=<%%URLVALUE(ID)%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="tblGalleries_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<label for="ID" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<p class="form-control-static" id="ID"><%%VALUE(ID)%%></p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="Title" class="control-label col-lg-3">Title</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="Title" id="Title" value="<%%VALUE(Title)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="Summary" class="control-label col-lg-3">Summary</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="Summary" id="Summary" value="<%%VALUE(Summary)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="HeaderImageURL" class="control-label col-lg-3">HeaderImageURL</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="HeaderImageURL" id="HeaderImageURL" value="<%%VALUE(HeaderImageURL)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="HeaderImageLinkURL" class="control-label col-lg-3">HeaderImageLinkURL</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="HeaderImageLinkURL" id="HeaderImageLinkURL" value="<%%VALUE(HeaderImageLinkURL)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="EntityID" class="control-label col-lg-3">EntityID</label>
+					<div class="col-lg-9">
+						<div class="row"><div class="col-xs-10"><%%COMBO(EntityID)%%></div><div class="col-xs-1"><%%PLINK(EntityID)%%></div></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="GIContentTypeID" class="control-label col-lg-3">GIContentTypeID</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="" type="text" class="form-control" name="GIContentTypeID" id="GIContentTypeID" value="<%%VALUE(GIContentTypeID)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="ContributorID" class="control-label col-lg-3">ContributorID</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="40" type="text" class="form-control" name="ContributorID" id="ContributorID" value="<%%VALUE(ContributorID)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="ThumbURL" class="control-label col-lg-3">ThumbURL</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="ThumbURL" id="ThumbURL" value="<%%VALUE(ThumbURL)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="CaptionText" class="control-label col-lg-3">CaptionText</label>
+					<div class="col-lg-9">
+						<textarea tabindex="1" class="form-control" name="CaptionText" id="CaptionText" rows="5"><%%VALUE(CaptionText)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="TemplateURL" class="control-label col-lg-3">TemplateURL</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="TemplateURL" id="TemplateURL" value="<%%VALUE(TemplateURL)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="ItemDisplayLimit" class="control-label col-lg-3">ItemDisplayLimit</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="" type="text" class="form-control" name="ItemDisplayLimit" id="ItemDisplayLimit" value="<%%VALUE(ItemDisplayLimit)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="URL" class="control-label col-lg-3">URL</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="255" type="text" class="form-control" name="URL" id="URL" value="<%%VALUE(URL)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-lg-offset-3 col-lg-9">
+						<div class="checkbox"><label for="EmbedShowPlayer"><input tabindex="1" type="checkbox" name="EmbedShowPlayer" id="EmbedShowPlayer" value="1" <%%CHECKED(EmbedShowPlayer)%%>> EmbedShowPlayer</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-lg-offset-3 col-lg-9">
+						<div class="checkbox"><label for="Online"><input tabindex="1" type="checkbox" name="Online" id="Online" value="1" <%%CHECKED(Online)%%>> Online</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="Sort" class="control-label col-lg-3">Sort</label>
+					<div class="col-lg-9">
+						<input tabindex="1" maxlength="" type="text" class="form-control" name="Sort" id="Sort" value="<%%VALUE(Sort)%%>">
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<div class="col-md-4 col-lg-2" id="tblGalleries_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="tblGalleries-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		jQuery(function(){
+			jQuery('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			jQuery('form').eq(0).change(function(){
+				if(jQuery(this).data('already_changed')) return;
+				if(jQuery('#deselect').length) jQuery('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				jQuery(this).data('already_changed', true);
+			});
+
+			jQuery('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ return false; });
+		});
+
+		document.observe("dom:loaded", function() {
+			/* when no record is selected ('add new' mode) */
+			if($$('input[name=SelectedID]')[0].value==''){
+				/* hide links to children tables */
+				$$('.detail_view a[id]').findAll(function(cl){ return cl.id.match(/_link$/); }).invoke('hide');
+				/* skip loading parent/children view */
+				return false;
+			}
+			post(
+				'parent-children.php', {
+					ParentTable: 'tblGalleries',
+					SelectedID: '<%%VALUE(ID)%%>',
+					Operation: 'show-children'
+				},
+				'tblGalleries-children'
+			);
+		});
+	</script>

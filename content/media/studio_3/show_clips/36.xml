@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 36</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/36-e.mp4?start=0" type="video/mp4" /> 
+      <description>Boston-based City Trees has been playing their high energy, contemporary jazz in New England since the summer of '92. Led by saxophonist Pete Levesque and guitarist Peter Fredele, the group performs their own compositions as well as their version of Miles Davis' "So What."</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

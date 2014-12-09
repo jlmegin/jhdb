@@ -1,0 +1,11 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%select%%> and <%%endselect%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- open the generated 'tblKeywords_view.php' file in your text editor and -->
+<!-- change the value of $x->ShowTableHeader to 0 -->
+
+		<td id="tblKeywords-ID-<%%VALUE(ID)%%>" class="tblKeywords-ID text-right"><%%SELECT%%><%%VALUE(ID)%%><%%ENDSELECT%%></td>
+		<td id="tblKeywords-Keyword-<%%VALUE(ID)%%>" class="tblKeywords-Keyword "><%%SELECT%%><%%VALUE(Keyword)%%><%%ENDSELECT%%></td>
+		<td id="tblKeywords-ReferralTypeID-<%%VALUE(ID)%%>" class="tblKeywords-ReferralTypeID text-right"><%%SELECT%%><%%VALUE(ReferralTypeID)%%><%%ENDSELECT%%></td>
+		<td id="tblKeywords-ReferralID-<%%VALUE(ID)%%>" class="tblKeywords-ReferralID text-right"><%%SELECT%%><%%VALUE(ReferralID)%%><%%ENDSELECT%%></td>

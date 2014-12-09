@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 35</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/35-e.mp4?start=0" type="video/mp4" /> 
+      <description>This one-of-a-kind Studio 3 showcases the amazing vocal impressionism of Bob Stoloff. Associate professor at Berklee College, Bob worked in the early '80's with Bobby McFerrin in the a cappella group Jazz Vocal Summit and later formed the Berklee Vocal Summit, which has spawned many talented singers -- including Vox One. Bob's eclectic repertoire runs from Duke Ellington to Herbie Hancock to Mick Jagger.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

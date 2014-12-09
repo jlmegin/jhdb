@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 31</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/31-e.mp4?start=0" type="video/mp4" /> 
+      <description>After last season's hot performance, the seven-piece Latin jazz group makes a comeback. Their leader, trumpeter/composer/arranger Wayne Naus, toured extensively as lead trumpet with the bands of Maynard Ferguson, Buddy Rich and Lionel Hampton. With a tour of Russia, a performance at this year's Boston Globe Jazz Festival, and a CD under their belt, Heart and Fire is gaining national prominence with their music, infused with authentic Latin rhythms.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

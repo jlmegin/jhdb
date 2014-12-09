@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 40</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/40-e.mp4?start=0" type="video/mp4" /> 
+      <description>Leading a quartet of Boston's young rising stars, tenor saxophonist Arthur Phillips has spent the past two summers playing at Boston's legendary Copley Plaza Bar as well as Maison Robert. Arthur's vocals are reminiscent of Chet Baker, and he plays saxophone in a style shaped by the 1950's Cool School of jazz.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

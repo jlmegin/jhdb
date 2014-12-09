@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 27</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/27-e.mp4?start=0" type="video/mp4" /> 
+      <description>A brilliant pianist and composer, Bevan Manson has been one of the most popular teachers at the New England Conservatory of Music for eight years. His critically acclaimed 1990 release on Iris Records, Rhythm Chowder, features many of his lyrical compositions, which both respect and expand jazz tradition. His amazing trio includes two of New England's most sought after sidemen, bassist Bob Nieske and drummer Bob Gullotti.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

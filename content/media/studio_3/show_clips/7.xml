@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 7</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/07-e.mp4?start=0" type="video/mp4" /> 
+      <description>Three Berklee teachers plus one rock and roll bass player combine elements of jazz, blues, rock, reggae, country and even Irish music to create a unique, joyful experience that transcends traditional boundaries of jazz. The compositions by guitarist and Rhode Island native Jim Kelly and the saxophone stylings of Jim Odgren, formerly with the Gary Burton Quartet, give this band its extraordinary sound.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>

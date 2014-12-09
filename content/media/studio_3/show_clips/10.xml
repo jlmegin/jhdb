@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:jwplayer="http://developer.longtailvideo.com/trac/"> 
+  <channel> 
+    <title>Studio 3, Episode 10</title> 
+    <item> 
+      <title>Title Sequence</title> 
+      <enclosure url="/files/video/studio_3/10-e.mp4?start=0" type="video/mp4" /> 
+      <description>Recognized by critics as one of the leading four-mallet vibraphonists in the country, Smith performs with an incredible band that includes Frank Wilkins on piano, Kenny Davis on bass, and Ron Savage on drums.  Her debut Brownstone Recordings CD The Takeoff was nominated for the Boston Music Awards' Album of the Year.  This concert, taped at Worcester Polytechnic Institute, was funded in part by grants from the New England Foundation for the Arts and the National Endowment for the Arts.</description>
+	  <jwplayer:provider>http</jwplayer:provider> 
+      <jwplayer:duration>33.03</jwplayer:duration>
+	</item>
+  </channel> 
+</rss>
