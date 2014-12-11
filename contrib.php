@@ -30,7 +30,76 @@ body,td,th {
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 12px;
 }
-
+/* Set the size and font of the tab widget */
+.tabGroup {
+    font: 10pt arial, verdana;
+    width: 100%;
+    height: 100%;
+}
+ 
+/* Configure the radio buttons to hide off screen */
+.tabGroup > input[type="radio"] {
+    position: absolute;
+    left:-100px;
+    top:-100px;
+}
+ 
+/* Configure labels to look like tabs */
+.tabGroup > input[type="radio"] + label {
+    /* inline-block such that the label can be given dimensions */
+    display: inline-block;
+ 
+    /* A nice curved border around the tab */
+    border: 1px solid black;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+     
+    /* the bottom border is handled by the tab content div */
+    border-bottom: 0;
+ 
+    /* Padding around tab text */
+    padding: 5px 10px;
+ 
+    /* Set the background color to default gray (non-selected tab) */
+    background-color:#ddd;
+}
+ 
+/* Focused tabs need to be highlighted as such */
+.tabGroup > input[type="radio"]:focus + label {
+    border:1px dashed black;
+}
+ 
+/* Checked tabs must be white with the bottom border removed */
+.tabGroup > input[type="radio"]:checked + label {
+    background-color:white;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    margin-bottom: -1px;
+}
+ 
+/* The tab content must fill the widgets size and have a nice border */
+.tabGroup > div {
+    display: none;
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 10px;
+    height: 100%;
+    overflow: auto;
+     
+    box-shadow: 0 0 20px #444;
+    -moz-box-shadow: 0 0 20px #444;
+    -webkit-box-shadow: 0 0 20px #444;
+     
+    border-radius: 0 5px 5px 5px;
+    -moz-border-radius: 0 5px 5px 5px;
+    -webkit-border-radius: 0 5px 5px 5px;
+}
+ 
+/* This matchs tabs displaying to thier associated radio inputs */
+.tab2:checked ~ .tab2, .tab3:checked ~ .tab3, .tab4:checked ~ .tab4, .tab5:checked ~ .tab5, .tab6:checked ~ .tab6 {
+    display: block;
+}
 </style>
 <script type="text/javascript">
 function scrollTo(hashLabel) {
@@ -57,7 +126,6 @@ function scrollTo(hashLabel) {
 </head>
 
 <body>
-<strong>Contributor Upload For JHDB</strong><br />
 
 
 
@@ -680,7 +748,7 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
 // =========================================================== MAINLINE FORMs ================================================
 ?>
 
-<table width="906" border="0">
+<!--<table width="906" border="0">
   <tr>
     <td colspan="3"><em>Logged in:</em> (contributor name will be added here)<br /> Scroll to: <?=$ScrollToAnchor	?>     <br />
 </td>
@@ -700,35 +768,33 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
 <? } ?>
     </p></td>
   </tr>
-  
-  
-  
-  
-   <? //-------------------------------  Step 1a  -------------------------  ?>
+</table>-->
+<h1>Jazz History Database Contributions Page</h1>
+<p>To begin, please enter the name of the new artist, event, or other subject you would like to contribute to, or select an existing one from the list.
 
-  <tr>
-    <td height="53" colspan="3" class="StepTitle"><a name="NewEntity" id="NewEntity"></a>Step 1a - Enter New Name (Performer, Band, Composer, Venue, Media, etc.)<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... or select an Existing Name</td>
-  </tr>
+
+<? //-------------------------------  Step 1a Add/pick the artist  -------------------------  ?>
+<div class="tab1">
+<table>
   <tr>
 
     <td width="410" valign="top">
      <form action=""  method="POST">
-	 <? if ($_SESSION['CurrentEntityID']>0) {?><em><strong>EDIT EXISTING</strong> Name of Musician/Group </em> <? }else{?>
+	 <? if ($_SESSION['CurrentEntityID']>0) {?><em><strong>EDIT EXISTING</strong> Name of Artist </em> <? }else{?>
 	 <br />
-	 <em><strong>Enter New Musician/Group Name</strong></em> 
+	 <em><strong>Enter New Artist Name</strong></em> 
 	 <? }?><span style='color:grey;'><br />
       (If NOT a person, then leave FirstName blank)</span><br />      
       <table width="400" border="0" <?=($_SESSION['CurrentEntityID']>0 ?"":"bgcolor='#FFFF00'")?> >
       <tr>
         <td><strong>First Name</strong> <br />
-          if a person<br />          <input type="text" name="NewEntityFName" size="30" value="<?=$_SESSION['CurrentEntityFName']?>" /></td>
-        <td><strong>Last Name</strong> or <br />
-          Complete Group Name<br />          <input type="text" name="NewEntityLName" size="30" value="<?=$_SESSION['CurrentEntityLName']?>" /></td>
+          <input type="text" name="NewEntityFName" size="30" value="<?=$_SESSION['CurrentEntityFName']?>" /></td>
+        <td><strong>Last Name</strong><br />
+          <input type="text" name="NewEntityLName" size="30" value="<?=$_SESSION['CurrentEntityLName']?>" /></td>
         </tr>
       <tr>
         <td colspan="2"><br />
-          <strong>Select <em>Top-level Category</em> for your contribution:</strong><br />
+          <strong>Which of the following best describes the new contribution:</strong><br />
           <?  
 		  $CategoryResults = db_sql("SELECT * FROM tblEntityTypes WHERE Online=1");
 		  while ($Row=mysqli_fetch_assoc($CategoryResults))
@@ -748,7 +814,10 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
         
  
         
-  <? if(!($_SESSION['CurrentEntityID']>0))
+  <?/* if(!($_SESSION['CurrentEntityID']>0))
+//NOTE: THIS CHUNK OF CODE IS COMMENTED OUT BECAUSE WE DONT WANT TO DISPLAY IT
+//BUT I SUSPECT SOME VARAIABLES ARE SET BASED OFF WHAT THE USER WOULD SUBMIT HERE
+//THAT COULD BE IMPORTANT FOR THE REST OF THE SITE TO FUNCTION, but who knows cause PHP is bad
 	{?>      
       <tr>
         <td colspan="2"><p>&nbsp;</p>
@@ -800,7 +869,7 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
             </p>
           </blockquote></td>
       </tr>
-    <? } ?> 
+    <? } */?> 
       
       <tr>
         <td colspan="2"><input type="submit" name="Command" value="Submit Name" />
@@ -824,16 +893,33 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
   <tr>
     <td colspan="3" >&nbsp;</td>
   </tr>
-  
-  
-  
-  
-  
-  
-<? //-------------------------------  Step 1b  -------------------------  ?>
+  </table>
+</div>
 
-<? if ($_SESSION['CurrentEntityID']>0) 
-{ ?>
+  <div class="tabGroup">
+    <input type="radio" name="tabGroup1" id="rad2" class="tab2" checked="checked"/>
+    <label for="rad2">Biography</label>
+     
+    <input type="radio" name="tabGroup1" id="rad3" class="tab3"/>
+    <label for="rad3">Galleries</label>
+
+<input type="radio" name="tabGroup1" id="rad4" class="tab4"/>
+    <label for="rad4">Images</label>
+
+<input type="radio" name="tabGroup1" id="rad5" class="tab5"/>
+    <label for="rad5">Audio</label>
+
+<input type="radio" name="tabGroup1" id="rad6" class="tab6"/>
+    <label for="rad6">Video</label>
+
+
+  
+  
+<? //-------------------------------  Step 1b Biography  -------------------------  ?>
+
+<? //if ($_SESSION['CurrentEntityID']>0) { ?>
+<div class="tab2">
+<table>
   <tr>
     <td height="53" colspan="3" class="StepTitle"><a name="EntityBio" id="EntityBio"></a>Step 1b - Enter Description/Biography for <?=$_SESSION['CurrentEntityName'] ?>  &nbsp;&nbsp;&nbsp;&nbsp;&lt;-- <em>NOTE TO STAFF:</em> &nbsp;Step 1b WILL NOT SHOW ONCE ENTERED</td>
   </tr>
@@ -905,18 +991,20 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
   <tr>
     <td colspan="3" >&nbsp;</td>
   </tr>
-  
-<? } // End IF for displaying Step 1b  ?>
-  
-  
-  
+  </table>
+</div>
+<? //} // End IF for displaying Step 1b  ?>
   
   
   
-<? //-------------------------------  Step 2a  -------------------------  ?>
+  
+  
+  
+<? //-------------------------------  Step 2a Galleries (It will probably end up being easier to just ignore galleries, we can automattically generate a master gallery when an artist is made, and automattically select that gallery for the sake of the rest of the website functioning  -------------------------  ?>
 
-<? if ($_SESSION['CurrentEntityID']>0)
-{ ?> 
+<? //if ($_SESSION['CurrentEntityID']>0){ ?> 
+<div class="tab3">
+<table>
   <tr>
     <td height="49" colspan="3"  class="StepTitle"><a name="NewGallery" id="NewGallery"></a>Step 2a - Add a New Gallery (Collection) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( &nbsp;<span style="color:red;font-size:110%;">OR</span>&nbsp; go to Step 3 for uploading)<br /></td>
   </tr>
@@ -989,7 +1077,9 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
    </form>
    </td>
  </tr>
- <? }// end EntityID ?>
+</table>
+</div>
+ <? //}// end EntityID ?>
  
  
  
@@ -998,11 +1088,46 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
  
  
  
-<? //-------------------------------  Step 2b  -------------------------  ?>
+<? //-------------------------------  Step 2b Images  -------------------------  ?>
 
-<? if ($_SESSION['CurrentEntityID']>0 
-			AND   0 != db_sfq("SELECT COUNT(ID) FROM tblGalleries WHERE EntityID={$_SESSION['CurrentEntityID']}"))
-{ ?>
+<? //if ($_SESSION['CurrentEntityID']>0 
+//			AND   0 != db_sfq("SELECT COUNT(ID) FROM tblGalleries WHERE EntityID={$_SESSION['CurrentEntityID']}"))
+//{ ?>
+<div class="tab4">
+<table>
+<tr>
+    <td align="right">Image File Selection for Upload Into <br />
+<?=$_SESSION['CurrentEntityName']?>'s Image SubGallery: <?=$_SESSION['CurrentGalleryTitle']?><br />
+</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr><td colspan="3">
+  
+<form action=""  method="POST" enctype="multipart/form-data">
+<table>
+  <tr>
+    <td align="right"><strong>Caption</strong><br /> (HTML permitted)</td><td></td>
+    <td><textarea name="ImageCaption" cols="60" rows="3"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td align="right"><strong>Upload Image File</strong> (JPEG format)</td><td></td>
+    <td><input type="file" name="ImageFile" size="60" /> <-- file to upload<br />
+      OR URL:
+      <input type="text" name="ImageFileURL" size="100" value="" id="ImageFileURL" /></td>
+  </tr>
+  <tr>
+    <td align="right">Upload Now --></td><td></td>
+    <td><input type="submit" name="Command" value="Submit Image for Upload"/>
+    </td>
+  </tr>
+  </table>
+</form>
+</td></tr>
+
+</table>
+<!--<table>
  <tr>
     <td height="49" colspan="3"  class="StepTitle"><a name="SelectGallery" id="SelectGallery"></a>Step 2b - Select an Existing Gallery for Uploading</td>
   </tr>
@@ -1029,16 +1154,18 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
     <td colspan="3"><br />
     <span style="font-size:75%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show/Hide Current  Contents (GalleryItems) for this Selected Gallery <a href="<?="{$GalleryDisplayBaseURL}/dump.php?d=1&g={$_SESSION['CurrentGalleryID']}" ?>" target="db_details"><?=($_SESSION['CurrentGalleryTitle'])?></a> (opens in new window)</span></td>
   </tr>
- <? }// end EntityID>0  for step 2b ?>
+</table>-->
+</div>
+ <? //}// end EntityID>0  for step 2b ?>
  
  
  
  
  
- <? //-------------------------------  Step 4  -------------------------  ?>
+ <? //-------------------------------  Step 4 Audio  -------------------------  ?>
 
-<? if ($_SESSION['CurrentEntityID']>0 AND $_SESSION['CurrentGalleryID']>0)
-{ 
+<? //if ($_SESSION['CurrentEntityID']>0 AND $_SESSION['CurrentGalleryID']>0)
+//{ 
 	$CurrentUploadType = $_SESSION['CurrentUploadType'];
 	if (substr($_SESSION['ThisCommand'],0,14)=="Select Gallery")
 	{// pre determine the type of gallery and initialize the upload type
@@ -1049,6 +1176,33 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
  <!--tr>
    <td colspan="3" >&nbsp; <?="$Command;$ThisCommand;$LastCommand;GalID:{$_SESSION['CurrentGalleryID']};UsageType:$GalleryUsageTypeID; GIContentTypeID=$GIContentTypeID;"?></td>
  </tr-->
+<div class="tab5">
+<table>
+<tr>
+    <td  colspan="3">MP3 File Selection for Upload
+    <form action=""  method="POST" enctype="multipart/form-data">
+<table>
+  <tr>
+    <td align="right"><strong>Caption</strong><br /> (HTML permitted)</td><td></td>
+    <td><textarea name="AudioCaption" cols="60" rows="3"></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td align="right"><strong>Upload Audio File</strong> (MP3 format)</td><td></td>
+    <td><input type="file" name="AudioFile" size="60" /> <-- file to upload<br />
+      OR URL:
+      <input type="text" name="AudioFileURL" size="100" value="" id="AudioFileURL" /></td>
+  </tr>
+  <tr>
+    <td align="right">Upload Now --></td><td></td>
+    <td><input type="submit" name="Command" value="Submit MP3 File for Upload"/>
+    </td>
+  </tr>
+  </table>
+</form>
+
+</table>
+<!--<table>
  <tr>
     <td height="33" colspan="3" class="StepTitle"><a name="Uploads" id="Uploads"></a>Step 3 - Upload/Add an Item into 
       <?=$_SESSION['CurrentEntityName'] ?>
@@ -1071,7 +1225,7 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
     <td>&nbsp;</td>
     <td>&nbsp;</td>
   </tr>
- <? } ?> 
+ <? //} ?> 
 <? if ($_SESSION['CurrentEntityID']>0 AND $_SESSION['CurrentGalleryID']>0 AND $_SESSION['CurrentUploadType']!="")
 { 
   switch ($_SESSION['CurrentUploadType'])
@@ -1239,8 +1393,49 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
 ?> 
   
 <? }// end if $_SESSION...  ?>
+</table>-->
+</div>
+<div class="tab6">
+
+<? //---------------------------------------------------- Video ------------------------------------------------------- ?>
+
+<form action=""  method="POST" enctype="multipart/form-data">
+<table>
+  <tr>
+    <td align="right">Video Title to Display</td>
+    <td></td>
+    <td><input type="text" name="YouTubePageTitle" size="60" id="YouTubePageTitle" /></td>
+  </tr>
+  <tr>
+    <td align="right">YouTube URL Entry</td><td></td>
+    <td><input type="text" name="YouTubeURL" size="60" /> 
+      <em>(required) </em></td>
+  </tr>
+  <tr>
+    <td align="right">Caption</td><td></td>
+    <td><textarea name="YouTubeURLCaption" cols="60" rows="3"></textarea>
+    </td>
+  </tr>
+  <!--   UNNEEDED in current display template technique   tr>
+    <td align="right">Upload Thumbnail Image File</td><td></td>
+    <td><input type="file" name="YouTubeThumbImage" size="60" id="YouTubeThumbImage" />
+      <br />
+      OR URL:
+      <input type="text" name="YouTubeThumbImageURL" size="100" value="" id="YouTubeThumbImageURL" />    </td>
+  </tr -->
+  <tr>
+    <td align="right">Submit Now --></td><td></td>
+    <td><input type="submit" name="Command" value="Submit YouTube Info"/>
+    </td>
+  </tr>
 </table>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </form>
+
+</div>
+
+
+</div>
+<!-- <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> -->
 <? if ($ErrorOverrideScrollToAnchor) scrollTo($ErrorOverrideScrollToAnchor);  // if error was thrown somewhere, use this one
 	elseif ($ScrollToAnchor) scrollTo($ScrollToAnchor); 
 ?>
