@@ -97,7 +97,7 @@ body,td,th {
 }
  
 /* This matchs tabs displaying to thier associated radio inputs */
-.tab2:checked ~ .tab2, .tab3:checked ~ .tab3, .tab4:checked ~ .tab4, .tab5:checked ~ .tab5, .tab6:checked ~ .tab6 {
+.tab2:checked ~ .tab2, .tab4:checked ~ .tab4, .tab5:checked ~ .tab5, .tab6:checked ~ .tab6 {
     display: block;
 }
 </style>
@@ -140,7 +140,7 @@ function scrollTo(hashLabel) {
 
 
 
-if (!$_SESSION['CurrentContributorID']) echo "Not Logged In Yet";
+if (!$_SESSION['CurrentContributorID']) //echo "Not Logged In Yet";
 
 // non-Commands  EntityID and GalleryID  onChange selections   are not posted in the $Command variable
 $LastCommand 				= $_SESSION['ThisCommand'];
@@ -174,6 +174,12 @@ if ($_POST['EntityID'])
  
 		if ($_POST['EntityID']!=$_SESSION['CurrentEntityID']) 
 			$_SESSION['CurrentGalleryID']=$_SESSION['CurrentGalleryTitle']=$_SESSION['CurrentUploadType']="";  
+		if($_POST['EntityID'] > 0) {
+			$GalId = db_sfq("SELECT ID FROM tblGalleries WHERE EntityID={$_POST['EntityID']} LIMIT 1");
+			$GalName = db_sfq("SELECT Title FROM tblGalleries WHERE ID={$GalId}");
+			$_SESSION['CurrentGalleryID']=$GalId;
+			$_SESSION['CurrentGalleryTitle']=$GalName;
+		}
 		$_SESSION['CurrentEntityID'] 		= $_POST['EntityID'];	
 		$_SESSION['ThisCommand'] = "Select Entity: {$_SESSION['CurrentEntityLName']}";
 		$ScrollToAnchor	= "NewGallery";
@@ -217,12 +223,12 @@ $Command = $_POST['Command'];  // Switching Entities and Galleries:  The existan
 
 if ($Command)
 {
-	echo "<br>Command just completed: <em>$Command</em><br>";
+	//echo "<br>Command just completed: <em>$Command</em><br>";
 	
 	switch ($Command)
 	{
 		case "Delete Entity &amp; ALL Associated Records &amp; Galleries":
-			echo "DELETE goes here<br>";
+			//echo "DELETE goes here<br>";
 			
 		break;  // end case DeSelect
 		
@@ -313,6 +319,30 @@ if ($Command)
 echo " <br>PrimaryEntityGIID=$PrimaryEntityGIID ; EntityID= {$_SESSION['CurrentEntityID']}  PrimaryEntityGalleryID=$PrimaryEntityGalleryID; **********";
 
 				$ScrollToAnchor	= "EntityBio"; 
+
+				//make a default gallery for the new entry and set it to the gallery currently being used
+				list($RangeMin, $RangeMax) =  get_ID_range_for_GalleryType('SubGallery'); // GalleryType contains Textual parameter type
+				$NextGalleryID	= find_first_free_ID( "tblGalleries", $RangeMin, $RangeMax);
+				$GalName = $_POST['NewEntityFName'] . "_" . $_POST['NewEntityLName'] . "_" . $NextGalleryID;
+				$GalleryResults = db_sql($Q1="INSERT INTO tblGalleries SET 
+						ID				= '{$NextGalleryID}',
+						Title			= '{$GalName}',
+						Summary			= 'Default Gallery',
+						EntityID 		= '{$NextEntityID}',
+						GIContentTypeID	= '3',
+						GalleryUsageTypeID= '2',
+						ContributorID	= '{$_SESSION['ContribbutorID']}',
+						Online		= 1
+					"); //  OTHER FIELDS?   FIXME
+				if (!$GalleryResults) die(" [contrib] Database gallery insert failed:  Title='{$_POST['NewGalleryTitle']}");
+				$_SESSION['CurrentGalleryID']		= db_mysqli_insert_id(); // new ID from insert
+				$_SESSION['CurrentGalleryTitle']	= $GalName;
+				$_SESSION['CurrentUploadType']		= ""; // reset, to be sure
+				
+				log_upload( " Gallery: Create New; $Q1; ");
+
+
+
 			} // end else create new
 		break;  // end case Submit Name
 
@@ -332,7 +362,8 @@ echo " <br>PrimaryEntityGIID=$PrimaryEntityGIID ; EntityID= {$_SESSION['CurrentE
 			//  NOT IMPLEMENTED for: EDIT *existing* bio, etc.
 			
 			if (!$_SESSION['CurrentEntityID'])  // needs session variable to be en force
-			 { echo "Warning: (Internal Error [contrib]) Bio info posted with no CurrentEntityID, this update ignored. EntityID[{$_SESSION['CurrentEntityID']}]<br>\n"; break;}
+			 { //echo "Warning: (Internal Error [contrib]) Bio info posted with no CurrentEntityID, this update ignored. EntityID[{$_SESSION['CurrentEntityID']}]<br>\n"; 
+			break;}
 			
 			
 			
@@ -430,6 +461,7 @@ $imgtype     = $_FILES['img'] ['type'] ;
 					$BioFileRoot	= "{$EntityDirectoryBaseRoot}/bio.{$FileExt}";
 
 //	echo "<br>BIO: $BioFilePath; $BioFileURL; <br>\n";
+					if(file_exists($BioFilePath)) unlink($BioFilePath);
 					$BioFile = fopen($BioFilePath, "w") or die("Error [contrib]: Bio Create File: Unable to open file: {$BioFilePath}");
 					fwrite($BioFile, $BioText);
 					fclose($BioFile);
@@ -458,7 +490,7 @@ $imgtype     = $_FILES['img'] ['type'] ;
 			//$ThisPrimaryGIID = db_sfq("SELECT PrimaryGIID FROM tblEntities WHERE ID={$_SESSION['CurrentEntityID']} ");	// get (hopefully) newly added Musician Main GalleryID
 			//$_SESSION['CurrentGalleryID'] = db_sql("SELECT SubGalleryID FROM tblGalleryItems WHERE ID = '{$ThisPrimaryGIID}'");
 			$ThisBioGalleryItemID = db_sfq("SELECT BioDescrGIID FROM tblEntities WHERE ID='{$_SESSION['CurrentEntityID']}'");
-echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioDescrGIID FROM tblEntities WHERE ID='{$_SESSION['CurrentEntityID']}''); -->\n";
+//echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioDescrGIID FROM tblEntities WHERE ID='{$_SESSION['CurrentEntityID']}''); -->\n";
 			if (!$ThisBioGalleryItemID) 
 			{  // Gal Item for Bio didn't prev exist, so insert new GI
 				list($RangeMin, $RangeMax) 		= get_ID_range_for_GalleryType('GalleryItem');	
@@ -899,9 +931,6 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
   <div class="tabGroup">
     <input type="radio" name="tabGroup1" id="rad2" class="tab2" checked="checked"/>
     <label for="rad2">Biography</label>
-     
-    <input type="radio" name="tabGroup1" id="rad3" class="tab3"/>
-    <label for="rad3">Galleries</label>
 
 <input type="radio" name="tabGroup1" id="rad4" class="tab4"/>
     <label for="rad4">Images</label>
@@ -919,34 +948,25 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
 
 <? //if ($_SESSION['CurrentEntityID']>0) { ?>
 <div class="tab2">
+NOTE: IF A BIOGRAPHY IS SUBMITTED, IT WILL DELETE ALL PREVIOUS BIOGRAPHIES FOR THIS ARTIST
 <table>
-  <tr>
-    <td height="53" colspan="3" class="StepTitle"><a name="EntityBio" id="EntityBio"></a>Step 1b - Enter Description/Biography for <?=$_SESSION['CurrentEntityName'] ?>  &nbsp;&nbsp;&nbsp;&nbsp;&lt;-- <em>NOTE TO STAFF:</em> &nbsp;Step 1b WILL NOT SHOW ONCE ENTERED</td>
-  </tr>
   <tr>
     <td colspan="3" >
      <form action=""  method="POST" enctype="multipart/form-data">
-       <p><strong>Birthdate or Start date for <span class="StepTitle">
-         <?=$_SESSION['CurrentEntityName'] ?>
-         </span>:</strong><br>
-         <i>Leave blank if unknown. Format: MM/DD/YYYY or YYYY</i><br />
-         <input type="text" name="EntityBirthDate" size="10" value="<?=$EntityBirthDate?>" />
+       <p><strong>Birth/Start date</strong><input type="text" name="EntityBirthDate" size="10" value="<?=$EntityBirthDate?>" /><br/>
+	<strong>Death/End date</strong><input type="text" name="EntityDeathDate" size="10" value="<?=$EntityDeathDate?>" /><br>
+         <i>Leave blank if unknown/not applicable. Format: MM/DD/YYYY or YYYY</i><br />
          <br /><br />
-         
-         <strong>Deathdate or End date:</strong><br>
-         <i>Leave blank if not applicable. Format: MM/DD/YYYY or YYYY</i> <br />
-         <input type="text" name="EntityDeathDate" size="10" value="<?=$EntityDeathDate?>" />
-         <br />
-         <br /><br />
+
+	<strong>Biography</strong><br>
+         <textarea cols='100' rows='10' name="EntityBioDescription" 
+       placeholder="Enter information about  <?=$_SESSION['CurrentEntityName'] ?>. You may list any sources (if applicable) below the main body of text. You will be cited as the author of this entry. Limit 10,000 characters">
+    	</textarea>
+	<br />
+	<br />
          
          <strong>Biographical-Portrait Image</strong> (if available):<br>
-         <i>To choose a file to upload, click the 'Choose File' button on the right. You must have permission to do so from the copyright owner. </i>
          <input type='file' name='EntityBioImageFile' id="EntityBioImageFile" >
-         <br />
-         OR URL: 
-         <input type="text" name="EntityBioImageSourceURL" size="100" value="" />
-         <br />
-         <br />
          <br />
          <strong>Biographical-Portrait Caption</strong> (<i>If applicable</i>)<br />
          
@@ -955,29 +975,14 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
     </textarea>
          <br />
          <br />
-         
-         <strong>Biography or Descriptive Text</strong><br>
-         <textarea cols='100' rows='10' name="EntityBioDescription" 
-       placeholder="Enter information about  <?=$_SESSION['CurrentEntityName'] ?>. You may list any sources (if applicable) below the main body of text. You will be cited as the author of this entry. Limit 10,000 characters">
-    </textarea>
-         <br />
-         <br />
        </p>
        <p><strong>Optional Image</strong> to be used as thumbnail representation for the top-level Musician Collection:<br />
-         <i>To choose a file to upload, click the 'Choose File' button on the right. You must have permission to do so from the copyright owner. <br />
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;300px W&nbsp; &nbsp;X &nbsp;&nbsp;110px H<br />
+         <i>Perfered size is 300px W X 110px H. You must have permission to do so from the copyright owner. <br />
          </i>
          <input type='file' name='EntityThumbImageForGalleryMarquis' id="EntityThumbImageForGalleryMarquis" />
          <br />
-         OR URL:
-         <input type="text" name="EntityThumbURLForGalleryMarquis" size="100" value="" />
          <br />
-         <br />
-         <br />
-         <input type="submit" name="Command" value="Submit Bio Info" /> 
-         <-- Save above descriptive information for  	<strong>
-          <?=$_SESSION['CurrentEntityName'] ?>
-           </strong>
+         <input type="submit" name="Command" value="Submit Bio Info" />
          <br />
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:grey"><em>To edit or delete, please contact a JHDB administrator</em></span></p>
      </form>
@@ -998,88 +1003,6 @@ echo "<!-- *** ThisBioGalleryItemID= $ThisBioGalleryItemID = db_sfq('SELECT BioD
   
   
   
-  
-  
-<? //-------------------------------  Step 2a Galleries (It will probably end up being easier to just ignore galleries, we can automattically generate a master gallery when an artist is made, and automattically select that gallery for the sake of the rest of the website functioning  -------------------------  ?>
-
-<? //if ($_SESSION['CurrentEntityID']>0){ ?> 
-<div class="tab3">
-<table>
-  <tr>
-    <td height="49" colspan="3"  class="StepTitle"><a name="NewGallery" id="NewGallery"></a>Step 2a - Add a New Gallery (Collection) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( &nbsp;<span style="color:red;font-size:110%;">OR</span>&nbsp; go to Step 3 for uploading)<br /></td>
-  </tr>
-
-  <tr>
-    <td colspan="3" >A <strong>Gallery</strong> is a "collection" of Museum Items (Pictures, MP3s, etc.) for this Musician/Band/Venue<br />
-Please enter a <strong>Gallery Title</strong>, which serves as a Label/Title for this Collection or Grouping<br />
-and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (sentence/phrase/short paragraph) of what this Gallery Contains.<br /><br />
-</td>
-  </tr>
-  <tr>
-   <td colspan="3" >
-   <form action=""  method="POST">
-   
-        <p>
-          <? if ($_SESSION['CurrentGalleryID']>0)   
-	           {
-			?>
-          Edit Existing Gallery Title:
-          <? }else{?>
-          Enter <strong>New Gallery Title</strong>:
-          <? }?>
-          <br />      
-          
-          <input type="text" name="NewGalleryTitle" size="30" value="<?=$_SESSION['CurrentGalleryTitle']?>" />
-          <br />
-          <br />
-          
-          
-          <? if (!$_SESSION['CurrentGalleryID']>0)   
-	{?>
-          <strong>Type of New Gallery</strong>: &nbsp;(*)<br />
-          <select name="GalleryType">
-            <option value="SubGallery" selected="selected">Sub Gallery for <?=$_SESSION['CurrentEntityName']?> </option>
-            <!--option value="MusicianBandMainGallery">Top-level/Primary Musician/Band Collection for <?=$_SESSION['CurrentEntityName']?> </option>
-            <option value="BaseGallery">Base Collections (for JHDB Administrator Usage Only)</option-->
-          </select> 
-         <br />
-<span style="font-size:75%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*) 
-         A <strong>SubGallery</strong> is used to group items together, such as Images,  Audio MP3 files, YouTube Videos</span><br />
-          <br />
-          Contents Type for New Gallery:<br />
-<? display_dropdown ( /*HTMLID*/'GIContentTypeID', /*Table*/'tblGIContentTypes', /*InputName*/'GIContentTypeID', /*OnChangeSubmit*/false, /*CheckOnline*/false, /*DisplayCurrent*/false, /*CurrentID*/'', /*QueryTable*/'', /*QueryWhere*/'AND ID<8 AND ID>1 AND  ID!=2*ROUND(ID/2)' /*odd   might just us  'ID IN (3,5,7)' */, /*OrderBy */'ID',  /*Repeater*/'', /*UnselectedDefaultTextLabel*/'Select Content Type', /*OnlyOneFlag*/false/*don't use with OnChange*/, /*JSParams*/'', /*LimitLabelChars */ 60, /*DisplayPrefixID*/'', /*ComboText1A*/'', /*ComboQuery1*/'', /*ComboText1C*/'', /*DebugFlag*/false,
- /*DisplayListField*/'Name', /*ValueField*/'ID', /*HideIfNone*/false, /*Anchor*/'', /*$FormTags*/false, /*OptionValueForUnselected*/ -1 ); ?>
-<br /><br />
-
-			Usage Type (context):<br />
-<? display_dropdown ( /*HTMLID*/'GalleryUsageTypeID', /*Table*/'tblGalleryUsageTypes', /*InputName*/'GalleryUsageTypeID', /*OnChangeSubmit*/false, /*CheckOnline*/false, /*DisplayCurrent*/false, /*CurrentID*/'', /*QueryTable*/'', /*QueryWhere*/'AND ID<=10' /*odd   might just us  'ID IN (3,5,7)' */, /*OrderBy */'ID',  /*Repeater*/'', /*UnselectedDefaultTextLabel*/'Select Usage Type', /*OnlyOneFlag*/false/*don't use with OnChange*/, /*JSParams*/'', /*LimitLabelChars */ 60, /*DisplayPrefixID*/'', /*ComboText1A*/'', /*ComboQuery1*/'', /*ComboText1C*/'', /*DebugFlag*/false,
- /*DisplayListField*/'Name', /*ValueField*/'ID', /*HideIfNone*/false, /*Anchor*/'', /*$FormTags*/false, /*OptionValueForUnselected*/ -1 ); ?>
-          <br />
-
-
-        </p>
-        <table width="505" border="0">
-          <tr>
-            <td width="134" align="right"><strong>Gallery Summary<br />
-             </strong> <span style="font-size:80%;">(optional)</span></td>
-            <td width="361"><textarea name="GallerySummary" cols="80" rows="3"></textarea></td>
-          </tr>
-        </table>
-    <br />
-
-    <? }// end !CurrentGalleryID ?>     
-	
-    <input type="submit" name="Command" value="Submit Gallery Info" />
-    
-&lt;-- Click to Submit the above New Gallery Information
-   <br />
-   <br />
-   </form>
-   </td>
- </tr>
-</table>
-</div>
- <? //}// end EntityID ?>
  
  
  
@@ -1095,13 +1018,6 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
 //{ ?>
 <div class="tab4">
 <table>
-<tr>
-    <td align="right">Image File Selection for Upload Into <br />
-<?=$_SESSION['CurrentEntityName']?>'s Image SubGallery: <?=$_SESSION['CurrentGalleryTitle']?><br />
-</td>
-    <td></td>
-    <td></td>
-  </tr>
   <tr><td colspan="3">
   
 <form action=""  method="POST" enctype="multipart/form-data">
@@ -1114,8 +1030,6 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
   <tr>
     <td align="right"><strong>Upload Image File</strong> (JPEG format)</td><td></td>
     <td><input type="file" name="ImageFile" size="60" /> <-- file to upload<br />
-      OR URL:
-      <input type="text" name="ImageFileURL" size="100" value="" id="ImageFileURL" /></td>
   </tr>
   <tr>
     <td align="right">Upload Now --></td><td></td>
@@ -1125,8 +1039,8 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
   </table>
 </form>
 </td></tr>
-
 </table>
+
 <!--<table>
  <tr>
     <td height="49" colspan="3"  class="StepTitle"><a name="SelectGallery" id="SelectGallery"></a>Step 2b - Select an Existing Gallery for Uploading</td>
@@ -1177,6 +1091,7 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
    <td colspan="3" >&nbsp; <?="$Command;$ThisCommand;$LastCommand;GalID:{$_SESSION['CurrentGalleryID']};UsageType:$GalleryUsageTypeID; GIContentTypeID=$GIContentTypeID;"?></td>
  </tr-->
 <div class="tab5">
+NOTE: AUDIO UPLOADS NOT YET IMPLEMENTED
 <table>
 <tr>
     <td  colspan="3">MP3 File Selection for Upload
@@ -1190,8 +1105,6 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
   <tr>
     <td align="right"><strong>Upload Audio File</strong> (MP3 format)</td><td></td>
     <td><input type="file" name="AudioFile" size="60" /> <-- file to upload<br />
-      OR URL:
-      <input type="text" name="AudioFileURL" size="100" value="" id="AudioFileURL" /></td>
   </tr>
   <tr>
     <td align="right">Upload Now --></td><td></td>
@@ -1209,7 +1122,7 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
     Gallery: &quot;<?=$_SESSION['CurrentGalleryTitle']?>&quot;</td>
   </tr>
   <tr>
-    <td> <!-- some options below are not really "uploads",  All are types of GalleryItems -->
+    <td>
     <form id='UploadType' name='UploadType' method='post' action='' >
     <select name='UploadType'  OnChange='this.form.submit();' >
         <option value='' >Select Type of Upload for New GalleryItem</option>
@@ -1299,7 +1212,7 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
       <input type="text" name="AudioFileURL" size="100" value="" id="AudioFileURL" /></td>
   </tr>
   <tr>
-    <td align="right">Upload Now --></td><td></td>
+    <td align="right">Upload Now</td><td></td>
     <td><input type="submit" name="Command" value="Submit MP3 File for Upload"/>
     </td>
   </tr>
@@ -1349,7 +1262,7 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
     </td>
   	</tr>  
     <tr>
-    <td align="right">Add Chosen SubGallery--><br />
+    <td align="right">Add Chosen SubGallery<br />
       to Parent Gallery:<br />
       <?=$_SESSION['CurrentGalleryTitle']?></td><td></td>
     <td valign="top"><input type="submit" name="Command" value="Associate SubGallery"/>
@@ -1375,13 +1288,6 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
     <td><textarea name="YouTubeURLCaption" cols="60" rows="3"></textarea>
     </td>
   </tr>
-  <!--   UNNEEDED in current display template technique   tr>
-    <td align="right">Upload Thumbnail Image File</td><td></td>
-    <td><input type="file" name="YouTubeThumbImage" size="60" id="YouTubeThumbImage" />
-      <br />
-      OR URL:
-      <input type="text" name="YouTubeThumbImageURL" size="100" value="" id="YouTubeThumbImageURL" />    </td>
-  </tr -->
   <tr>
     <td align="right">Submit Now --></td><td></td>
     <td><input type="submit" name="Command" value="Submit YouTube Info"/>
@@ -1395,10 +1301,11 @@ and a <strong>Type of Gallery</strong> and a <strong>Gallery Summary</strong> (s
 <? }// end if $_SESSION...  ?>
 </table>-->
 </div>
-<div class="tab6">
+
 
 <? //---------------------------------------------------- Video ------------------------------------------------------- ?>
-
+<div class="tab6">
+NOTE: VIDEO UPLOADS NOT YET IMPLEMENTED
 <form action=""  method="POST" enctype="multipart/form-data">
 <table>
   <tr>

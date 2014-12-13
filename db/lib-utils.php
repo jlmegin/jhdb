@@ -63,7 +63,7 @@ function convert_field_to_sql_date($Date)
 
 function MoveToCurrentEntityDirectory($SubDir, $PostName/* file path or URL */, $CopyRename='rename', $Suffix='', $MaxH='', $MaxW='')
 { // uploaded image or URL image   file is placed in the Entity's path   image/directory-- returns target URL
-echo "<br> MoveToCurrentEntityDirectory($SubDir, $PostName, $CopyRename, $Suffix, $MaxH, $MaxW)<br>\n";
+//echo "<br> MoveToCurrentEntityDirectory($SubDir, $PostName, $CopyRename, $Suffix, $MaxH, $MaxW)<br>\n";
 	
 	if($CopyRename!='URL' AND $_FILES[$PostName]['error'] != 0) 
 		die("Error in uploading file. <a href='http://php.net/manual/en/features.file-upload.errors.php'>{$_FILES[$PostName]['error']}</a> [lib-utils]");
@@ -95,7 +95,7 @@ echo "<br> MoveToCurrentEntityDirectory($SubDir, $PostName, $CopyRename, $Suffix
 if (file_exists($TargetPathAndName)) echo"Internal error: file still/already exists $TargetPathAndName 	 [lib-utils]<br>\n";
 	$TargetURL				= "{$EntityContentBaseURL}musicians/{$EntityDirectoryPath}/{$SubDir}/{$Filename}";
 	$SourceTempFile			= $_FILES[$PostName]['tmp_name'];
-echo " 	$EntityDirectoryPath; $TargetPathAndName; $TargetURL;	$SourceTempFile;";
+//echo " 	$EntityDirectoryPath; $TargetPathAndName; $TargetURL;	$SourceTempFile;";
 
 	if ($CopyRename=='rename')
 		$Result = rename($SourceTempFile, $TargetPathAndName);
@@ -105,7 +105,7 @@ echo " 	$EntityDirectoryPath; $TargetPathAndName; $TargetURL;	$SourceTempFile;";
 	  	$Result = copy($PostName/*URL*/, $TargetPathAndName);
 	if (!$Result) 
 	{
-		die ("<strong>Internal Error  </strong> [lib-utils] for uploaded file {$CopyRename} from temp directory (temp dir perm=".sprintf('%o', fileperms($SourceTempFile))."; dir owner=".fileowner($SourceTempFile).") to musician's directory(dir perm=".sprintf('%o', fileperms($TargetDirPath))."; dir owner=".fileowner($TargetDirPath)."): <br /><strong>{$CopyRename}</strong>({$SourceTempFile}{$PostName}, {$TargetPath}{$Filename}) <br />\n");
+		//die ("<strong>Internal Error  </strong> [lib-utils] for uploaded file {$CopyRename} from temp directory (temp dir perm=".sprintf('%o', fileperms($SourceTempFile))."; dir owner=".fileowner($SourceTempFile).") to musician's directory(dir perm=".sprintf('%o', fileperms($TargetDirPath))."; dir owner=".fileowner($TargetDirPath)."): <br /><strong>{$CopyRename}</strong>({$SourceTempFile}{$PostName}, {$TargetPath}{$Filename}) <br />\n");
 		
 	}
 	 chmod($TargetPathAndName, 0777);
