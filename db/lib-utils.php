@@ -103,11 +103,13 @@ if (file_exists($TargetPathAndName)) echo"Internal error: file still/already exi
 	  	$Result = copy($SourceTempFile, $TargetPathAndName);
 	  elseif ($CopyRename=='URL')
 	  	$Result = copy($PostName/*URL*/, $TargetPathAndName);
+	$doLastSteps = TRUE;
 	if (!$Result) 
 	{
 		//die ("<strong>Internal Error  </strong> [lib-utils] for uploaded file {$CopyRename} from temp directory (temp dir perm=".sprintf('%o', fileperms($SourceTempFile))."; dir owner=".fileowner($SourceTempFile).") to musician's directory(dir perm=".sprintf('%o', fileperms($TargetDirPath))."; dir owner=".fileowner($TargetDirPath)."): <br /><strong>{$CopyRename}</strong>({$SourceTempFile}{$PostName}, {$TargetPath}{$Filename}) <br />\n");
-		
+		$doLastSteps = FALSE;
 	}
+	if($doLastSteps){
 	 chmod($TargetPathAndName, 0777);
 	 //chown($TargetPathAndName, ServerAccountUsername);
 	 
@@ -116,7 +118,7 @@ if (file_exists($TargetPathAndName)) echo"Internal error: file still/already exi
 	 { // this is done at end where the file can be re written (because if URL, cannot re write URL source)
 		 resize_image('max', $TargetPathAndName, $TargetPathAndName, $MaxH, $MaxW);
 	 }
-	 
+	} 
 	//return array($TargetURL, $TargetPathAndName);  // turns out path never needed
 	return $TargetURL;
 } // end MoveToCurrentEntityDirectory

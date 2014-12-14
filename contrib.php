@@ -461,7 +461,12 @@ $imgtype     = $_FILES['img'] ['type'] ;
 					$BioFileRoot	= "{$EntityDirectoryBaseRoot}/bio.{$FileExt}";
 
 //	echo "<br>BIO: $BioFilePath; $BioFileURL; <br>\n";
-					if(file_exists($BioFilePath)) unlink($BioFilePath);
+					//make sure we are writing to a new bio, don't want to overwrite an old one
+					$BioCount = 1;
+					while(file_exists($BioFilePath)){
+						$BioFilePath 	= "{$EntityDirectoryPHPPath}/bio_" . $BioCount . ".{$FileExt}";
+						$BioCount++;
+					}
 					$BioFile = fopen($BioFilePath, "w") or die("Error [contrib]: Bio Create File: Unable to open file: {$BioFilePath}");
 					fwrite($BioFile, $BioText);
 					fclose($BioFile);
@@ -948,7 +953,7 @@ $imgtype     = $_FILES['img'] ['type'] ;
 
 <? //if ($_SESSION['CurrentEntityID']>0) { ?>
 <div class="tab2">
-NOTE: IF A BIOGRAPHY IS SUBMITTED, IT WILL DELETE ALL PREVIOUS BIOGRAPHIES FOR THIS ARTIST
+NOTE: ONCE A BIOGRAPHY IS SUBMITTED, IT CANNOT BE EDITED, SUBMITTING MORE BIOGRAPHIES IS OK THOUGH
 <table>
   <tr>
     <td colspan="3" >
